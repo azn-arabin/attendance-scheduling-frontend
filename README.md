@@ -1,54 +1,100 @@
-# React + TypeScript + Vite
+# 🎓 Smart Attendance & Scheduling System — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** of the Smart Attendance & Scheduling System, designed to manage student attendance, batch scheduling, instructor statistics, and administrative controls. Built with a modern React + TypeScript stack, this interface provides a responsive, user-friendly experience for students, instructors, and admins.
 
-Currently, two official plugins are available:
+> 🔗 **Backend Repo**: [https://github.com/azn-arabin/attendance-scheduling-backend](https://github.com/azn-arabin/attendance-scheduling-backend)
+> ⚠️ This frontend depends on the backend APIs — ensure the backend is running at `http://localhost:8000/api`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features Implemented
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* 🔐 Authentication using JWT (Login/Register)
+* 📅 Admin scheduling for batches and class timings
+* 🧑‍🏫 Instructor dashboard with batch-wise attendance tracking and student performance trends
+* 🎓 Student dashboard for viewing upcoming classes and attendance history
+* 📊 Charts for performance trends using `recharts`
+* 🌙 Light/Dark mode with `next-themes`
+* 🧩 Component-based form system using `react-hook-form` + `zod` validation
+* 💅 UI built with `shadcn/ui`, `tailwindcss`, and `radix-ui`
+* 📁 Reusable tables with support for sorting, filtering, and actions (edit/delete)
+* 🔄 API integration via `axios` with secure bearer token handling
+* 💬 Toast notifications via `sonner`
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧪 Tech Stack & Libraries
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **React 19 + TypeScript**
+* **Vite** — blazing fast build tool
+* **Tailwind CSS 4**
+* **ShadCN/UI** — for accessible, headless UI components
+* **Radix UI** — dialog, select, tooltip, popover, and more
+* **React Router v7**
+* **React Hook Form + Zod** — form management & validation
+* **Axios** — API integration
+* **Lucide React** — clean, customizable icons
+* **Recharts** — data visualization
+* **Date-fns** — date formatting
+* **TanStack Table v8** — powerful table API
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🛠️ Setup Instructions
+
+Follow these steps to get the frontend running locally:
+
+1. **Clone the project**
+
+   ```bash
+   git clone https://github.com/azn-arabin/attendance-scheduling-frontend.git
+   cd attendance-scheduling-frontend
+   ```
+
+2. **Create `.env` file**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Edit `.env` to match your backend API URL (typically: `http://localhost:8000/api`)
+
+3. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+5. Visit the app at: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## ⚙️ Backend Requirement
+
+To use this frontend:
+
+* The backend must be up and running at [http://localhost:8000/api](http://localhost:8000/api)
+* Follow backend setup from the repo: [attendance-scheduling-backend](https://github.com/azn-arabin/attendance-scheduling-backend)
+
+---
+
+## 📦 Scripts
+
+| Command           | Description                      |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Run in development mode          |
+| `npm run build`   | Build for production             |
+| `npm run lint`    | Run ESLint for code quality      |
+| `npm run preview` | Preview production build locally |
+
+---
+
+Feel free to customize and contribute to this project.
+For any questions, open an issue or reach out via the GitHub repository.
+
